@@ -464,7 +464,8 @@
             "Para saber quién es tu alma gemela, dinos: ¿Cuál es tu signo zodiacal?"
           );
           resp = resp.toLowerCase();
-          switch (resp) {
+	  resp_ws = resp.trim();
+          switch (resp_ws) {
             case "acuario":
               alert(
                 "WOW! Eres Acuario, los signos con los que eres compatible son los signos de fuego"
@@ -545,7 +546,8 @@ do {
       "¡Lee tu predicción diaria según tu signo zodiacal y prepárate para aprovechar las oportunidades! ¿Cuál es tu signo zodiacal?",
     )
     resp = resp.toLowerCase()
-    switch (resp) {
+    resp_ws = resp.trim();
+    switch (resp_ws) {
       case "acuario":
         alert(
           "Las innovaciones estarán en el aire. Permítete pensar fuera de la caja y considera nuevas formas de abordar viejos problemas.",
