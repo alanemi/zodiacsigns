@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Barra Principal y Signos del Zodiaco</title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+       
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar img {
+            width: 150px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #e91e63;
+        }
+
+        .flags {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flags img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .hero {
+            padding: 100px 20px 50px; 
+            background: url() no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .signos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .signo {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .signo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .signo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .signo h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #e91e63;
+        }
+
+        .signo p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .button {
+            background-color: #e91e63;
+            color: #fff; 
+            padding: 12px 25px;
+            text-align: center; 
+            text-decoration: none; 
+            display: inline-block; 
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em; 
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #c2185b;
+            transform: scale(1.05);
+        }
+
+       
+        .info-section {
+            padding: 40px 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .info-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e91e63;
+            font-size: 2em;
+        }
+
+        .info-section p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 1em;
+            color: #555;
+            text-align: justify;
+        }
+
+        .red-underline {
+            color: red; 
+            text-decoration: underline; 
+        }
+
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: 80%;
+            }
+        }
+
+      
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-left: auto;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+ 
+    <div class="navbar">
+        <img src="https://www.zodiacsign.com/images/logo_n.png" alt="Logo Zodiaco">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="nav-menu">
+            <a href="#">SIGNOS DEL ZODIACO</a>
+            <a href=# onclick="horoscopo()">HORÓSCOPO</a>
+            <a href=# onclick="compatibles()">COMPATIBILIDAD</a>
+        </div>
+        <div class="flags">
+            <span class="search-icon">🔍</span>
+           </div>
+    </div>
+
+  
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Signos del Zodíaco y Signos Astrológicos: Significados y Características</h1>
+            <p>¡Siguiendo tu signo zodiacal descubrirás tu perfil zodiacal, el elemento al que perteneces y los planetas que rigen tu signo zodiacal!</p>
+        </div>
+    </section>
+
+    
+    <div class="container">
+        <div class="signos-grid">
+            
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/aquarius.jpg" alt="Acuario">
+                <h3>Acuario</h3>
+                <p>20 de enero - 18 de febrero</p>
+            </div>
+           
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/pisces.jpg" alt="Piscis">
+                <h3>Piscis</h3>
+                <p>19 de febrero - 20 de marzo</p>
+            </div>
+            
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/aries.jpg" alt="Aries">
+                <h3>Aries</h3>
+                <p>21 de marzo - 19 de abril</p>
+            </div>
+         
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/taurus.jpg" alt="Tauro">
+                <h3>Tauro</h3>
+                <p>20 de abril - 20 de mayo</p>
+            </div>
+           
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/gemini.jpg" alt="Géminis">
+                <h3>Géminis</h3>
+                <p>21 de mayo - 20 de junio</p>
+            </div>
+            
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/cancer.jpg" alt="Cáncer">
+                <h3>Cáncer</h3>
+                <p>21 de junio - 22 de julio</p>
+            </div>
+            
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/leo.jpg" alt="Leo">
+                <h3>León</h3>
+                <p>23 de julio - 22 de agosto</p>
+            </div>
+            
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/virgo.jpg" alt="Virgo">
+                <h3>Virgo</h3>
+                <p>23 de agosto - 22 de septiembre</p>
+            </div>
+           
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/libra.jpg" alt="Libra">
+                <h3>Libra</h3>
+                <p>23 de septiembre - 22 de octubre</p>
+            </div>
+            
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/scorpio.jpg" alt="Escorpión">
+                <h3>Escorpión</h3>
+                <p>23 de octubre - 21 de noviembre</p>
+            </div>
+            
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/sagittarius.jpg" alt="Sagitario">
+                <h3>Sagitario</h3>
+                <p>22 de noviembre – 21 de diciembre</p>
+            </div>
+            <div class="signo">
+                <img src="https://www.zodiacsign.com/images/capricorn.jpg" alt="Capricornio">
+                <h3>Capricornio</h3>
+                <p>22 de diciembre - 19 de enero</p>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="container">
+        <div class="button-group">
+	    <button class="button" onclick="horoscopo()">HORÓSCOPO</button>         
+            <button class="button" onclick="compatibles()">COMPATIBILIDAD AMOROSA</button>
+
+        </div>
+    </div>
+
+    
+    <div class="container">
+        <div style="text-align: center; margin-top: 40px;">
+            <img src="https://www.zodiacsign.com/images/zodiac-signs-icon.png" alt="Icono Signos del Zodiaco" style="width: 100%; max-width: 500px; height: auto;">
+        </div>
+    </div>
+
+  
+    <div class="container">
+        <div class="info-section">
+            <h2>Introducción a la Astrología</h2>
+            <p>
+                Hay 12 signos del zodiaco y cada uno de ellos tiene sus propias fortalezas y debilidades, sus propios rasgos específicos, deseos y actitud hacia la vida y las personas. Al analizar la proyección de la posición de <span class="red-underline">los planetas</span>, el <span class="red-underline">Sol</span> y la <span class="red-underline">Luna</span> en la Eclíptica en el momento del nacimiento, la astrología puede darnos una idea de las características básicas, las preferencias, los defectos y los miedos de una persona.
+            </p>
+            <p>
+                Te facilitamos la tarea de descubrir cuál es tu signo del zodiaco, su perfil completo y su compatibilidad con otros signos del zodiaco. Al seleccionar tu signo de la <span class="red-underline">lista detallada de fechas de signos</span> del zodiaco, descubrirás todo sobre el carácter de tu signo solar, su <span class="red-underline">horóscopo,</span> rasgos, perfil, historia, mitos y <span class="red-underline">compatibilidad amorosa.</span>
+            </p>
+            <p>
+                Cada uno de los 12 signos del horóscopo pertenece a uno de los <span class="red-underline">cuatro elementos:</span> Aire, Fuego, Agua y Tierra. Estos elementos representan un tipo de energía esencial que actúa en cada uno de nosotros. <span class="red-underline">La astrología</span> tiene como objetivo ayudarnos a centrar estas energías en los aspectos positivos y a comprender mejor nuestro potencial y nuestros rasgos positivos y a afrontar los negativos.
+            </p>
+            <p>
+                Estos cuatro elementos ayudan a describir los tipos de personalidad únicos asociados con los signos astrológicos. Los cuatro elementos del zodíaco ejercen una profunda influencia en los rasgos básicos del carácter, las emociones, el comportamiento y el pensamiento.
+            </p>
+        </div>
+    </div>
+
+   
+    <div class="container">
+        
+        <div class="info-section">
+            <h2>Signos De Agua</h2>
+            <p>
+                <span class="red-underline">Los signos de agua</span> son excepcionalmente emocionales y ultrasensibles. Son muy intuitivos y pueden ser tan misteriosos como el océano mismo. A los signos de agua les encantan las conversaciones profundas y la intimidad. Rara vez hacen algo abiertamente y siempre están ahí para apoyar a sus seres queridos. <strong>Los signos de agua son:</strong> <span class="red-underline">Cáncer, Escorpio y Piscis.</span>
+            </p>
+        </div>
+
+        
+        <div class="info-section">
+            <h2>Signos De Fuego</h2>
+            <p>
+                <span class="red-underline">Los signos de fuego</span> suelen ser apasionados, dinámicos y temperamentales. Se enfadan con facilidad, pero también perdonan con facilidad. Son aventureros con una energía inmensa. Son físicamente muy fuertes y son una fuente de inspiración para los demás. Los signos de fuego son personas inteligentes, conscientes de sí mismas, creativas e idealistas, siempre listas para la acción. <strong>Los signos de fuego son:</strong> <span class="red-underline">Aries, Leo y Sagitario.</span>
+            </p>
+        </div>
+
+       
+        <div class="info-section">
+            <h2>Signos De Tierra</h2>
+            <p>
+                <span class="red-underline">Los signos de tierra</span> son los que nos hacen poner los pies en la tierra. Son mayormente conservadores y realistas, pero también pueden ser muy emocionales. Están conectados con nuestra realidad material y pueden volcarse en los bienes materiales. Son prácticos, leales y estables y se quedan junto a su gente en los tiempos difíciles. <strong>Los signos de tierra son:</strong> <span class="red-underline">Tauro, Virgo y Capricornio.</span>
+            </p>
+        </div>
+
+      
+        <div class="info-section">
+            <h2>Signos De Aire</h2>
+            <p>
+                <span class="red-underline">Los signos de aire</span> son racionales, sociales y aman la comunicación y las relaciones con otras personas. Son pensadores, amigables, intelectuales, comunicativos y analíticos. Aman las discusiones filosóficas, las reuniones sociales y los buenos libros. Disfrutan dando consejos, pero también pueden ser muy superficiales. <strong>Los signos de aire son:</strong> <span class="red-underline">Géminis, Libra y Acuario.</span>
+            </p>
+        </div>
+    </div>
+
+  
+    <div class="footer">
+        <p>&copy; 2024 Signos del Zodiaco. Todos los derechos reservados.</p>
+    </div>
+
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+        function compatibles() {
+        do {
+          var resp = prompt(
+            "Para saber quién es tu alma gemela, dinos: ¿Cuál es tu signo zodiacal?"
+          );
+          resp = resp.toLowerCase();
+          switch (resp) {
+            case "acuario":
+              alert(
+                "WOW! Eres Acuario, los signos con los que eres compatible son los signos de fuego"
+              );
+              break;
+            case "piscis":
+              alert(
+                "WOW! Eres Piscis, los signos con los que eres compatible son los signos de tierra"
+              );
+              break;
+            case "aries":
+              alert(
+                "WOW! Eres Aries, los signos con los que eres compatible son los signos de aire."
+              );
+              break;
+            case "tauro":
+              alert(
+                "WOW! Eres Tauro, los signos con los que eres compatible son los signos de agua"
+              );
+              break;
+            case "géminis":
+            case "geminis":
+              alert(
+                "WOW! Eres Géminis, los signos con los que eres compatible son los signos de fuego"
+              );
+              break;
+            case "cáncer":
+            case "cancer":
+              alert(
+                "WOW! Eres Cáncer, los signos con los que eres compatible son los signos de tierra"
+              );
+              break;
+            case "leo":
+              alert(
+                "WOW! Eres Leo, los signos con los que eres compatible son los signos de aire"
+              );
+              break;
+            case "virgo":
+              alert(
+                "WOW! Eres Virgo, los signos con los que eres compatible son los signos de agua"
+              );
+              break;
+            case "libra":
+              alert(
+                "WOW! Eres Libra, los signos con los que eres compatible son los signos de fuego"
+              );
+              break;
+            case "escorpio":
+              alert(
+                "WOW! Eres Escorpio, los signos con los que eres compatible son los signos de tierra"
+              );
+              break;
+            case "sagitario":
+              alert(
+                "WOW! Eres Sagitario, los signos con los que eres compatible son los signos de aire"
+              );
+              break;
+            case "capricornio":
+              alert(
+                "WOW! Eres Capricornio, los signos con los que eres compatible son los signos de agua"
+              );
+              break;
+            default:
+              alert(
+                "Lo sentimos, no podemos encontrar tu signo, verifica si estas escribiendo bien tu signo"
+              );
+              break;
+          }
+          var conf = window.confirm(
+            "¿Quieres conocer los compatibles de otro signo?"
+          );
+        } while (conf === true);
+      }
+
+function horoscopo(){
+do {
+    var resp = prompt(
+      "¡Lee tu predicción diaria según tu signo zodiacal y prepárate para aprovechar las oportunidades! ¿Cuál es tu signo zodiacal?",
+    )
+    resp = resp.toLowerCase()
+    switch (resp) {
+      case "acuario":
+        alert(
+          "Las innovaciones estarán en el aire. Permítete pensar fuera de la caja y considera nuevas formas de abordar viejos problemas.",
+        )
+        break
+      case "piscis":
+        alert(
+          "Tu creatividad florecerá. Aprovecha este día para involucrarte en actividades artísticas o de expresión personal que te inspiren.",
+        )
+        break
+      case "aries":
+        alert(
+          "Hoy sentirás una energía renovada que te impulsará a tomar decisiones audaces. Aprovecha este impulso para iniciar un nuevo proyecto.",
+        )
+        break
+      case "tauro":
+        alert(
+          "Es un buen día para centrarte en tus finanzas. Considera hacer un presupuesto o planificar una inversión a largo plazo."
+          )
+        break
+      case "géminis":
+      case "geminis":
+        alert(
+          "Las comunicaciones serán clave hoy. No dudes en expresar tus ideas, ya que podrías recibir apoyo inesperado de alguien cercano.",
+        )
+        break
+      case "cáncer":
+      case "cancer":
+        alert(
+          "Tu intuición estará especialmente aguda. Confía en tus instintos al tomar decisiones personales o laborales.",
+        )
+        break
+      case "leo":
+        alert(
+          "Hoy es un buen día para brillar. Participa en actividades que te permitan mostrar tus talentos y no temas ser el centro de atención.",
+        )
+        break
+        case "virgo":
+        alert(
+          "La organización será fundamental hoy. Dedica tiempo a ordenar tus espacios físicos y mentales, lo que te ayudará a sentirte más en control.",
+        )
+        break
+        case "libra":
+        alert(
+          "Las relaciones personales se fortalecerán. Busca pasar tiempo con amigos o seres queridos; una conversación significativa podría surgir.",
+        )
+        break
+        case "escorpio":
+        alert(
+          "Podrías enfrentar un desafío emocional hoy. Permítete sentir y procesar tus emociones para encontrar claridad y paz.",
+        )
+        break
+        case "sagitario":
+        alert(
+          "Un espíritu aventurero te impulsará a explorar nuevas ideas o lugares. Considera hacer un viaje corto o aprender algo nuevo.",
+        )
+        case "capricornio":
+        alert(
+          "La disciplina será tu mejor aliada hoy. Establece metas claras y trabaja con constancia para alcanzarlas.",
+        )
+        break
+      default:
+        alert(
+          "Lo sentimos, no podemos encontrar tu signo, verifica si estas escribiendo bien tu signo",
+        )
+        break
+    }
+    var conf = window.confirm("¿Quieres conocer el horóscopo de otro signo?")
+  } while (conf === true)
+}
+    </script>
+</body>
+</html>
