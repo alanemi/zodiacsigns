@@ -260,36 +260,84 @@ Buscar la bondad en la humanidad es la historia de Virgo, y la decepción parece
 </div>
 <div class="subscribe">
 <h3>Suscríbete a nuestro horóscopo</h3>
-<input type="email" placeholder="Correo electrónico">
-<input type="text" placeholder="Nombre completo">
-<select>
-<option value="">Tu signo</option>
-<option value="acuario">Acuario</option>
-<option value="piscis">Piscis</option>
-<option value="aries">Aries</option>
-<option value="tauro">Tauro</option>
-<option value="geminis">Géminis</option>
-<option value="cancer">Cáncer</option>
-<option value="leo">Leo</option>
-<option value="virgo">Virgo</option>
-<option value="libra">Escorpión</option>
-<option value="sagitario">Sagitario</option>
-<option value="capricornio">Capricornio</option>
-</select>
-<br>
-<div class="checkbox-group">
-<label><input type="checkbox" checked> Diario</label>
-<label><input type="checkbox"> Semanalmente</label>
+ <label for="nombre">Nombre</label><br>
+  <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre"><br>
+
+  <label for="correo">Correo</label><br>
+  <input type="email" id="correo" name="correo" placeholder="Introduce tu correo"><br>
+
+  <label for="sign">Tu signo</label><br>
+  <select id="sign">
+    <option value="">Selecciona tu signo</option>
+    <option value="acuario">Acuario</option>
+    <option value="piscis">Piscis</option>
+    <option value="aries">Aries</option>
+    <option value="tauro">Tauro</option>
+    <option value="geminis">Géminis</option>
+    <option value="cancer">Cáncer</option>
+    <option value="leo">Leo</option>
+    <option value="virgo">Virgo</option>
+    <option value="libra">Libra</option>
+    <option value="escorpion">Escorpión</option>
+    <option value="sagitario">Sagitario</option>
+    <option value="capricornio">Capricornio</option>
+  </select>
+  <br>
+
+  <div class="checkbox-group">
+    <label><input type="checkbox" checked> Diario</label>
+    <label><input type="checkbox"> Semanalmente</label>
+  </div>
+  <br>
+
+  <div id="error" class="error"></div>
+  <button class="boton" onclick="validarFormulario()">Suscribir</button>
+  <p>Al hacer clic en "Suscribirse", acepta nuestras <a href="#">Política de privacidad y términos</a></p>
 </div>
-<br>
-<button>Suscribir</button>
-<p>Al hacer clic en "Suscribirse", acepta nuestras <a href="#">Política de privacidad y términos</a></p>
-</div>
+
 <div class="more-info">
-<button>SABER MÁS</button>
+  <button class="boton">SABER MÁS</button>
 </div>
-</div>}
-  <script>
+
+<script>
+function validarFormulario() {
+  var nombre = document.getElementById("nombre").value;
+  var correo = document.getElementById("correo").value;
+  var signo = document.getElementById("sign").value;
+  var errorDiv = document.getElementById("error");
+  errorDiv.innerHTML = "";
+  
+  if (nombre === "") {
+    errorDiv.innerHTML = "El campo de nombre no puede estar vacío.";
+    return false;
+  }
+
+  if (correo === "") {
+    errorDiv.innerHTML = "El campo de correo no puede estar vacío.";
+    return false;
+  }
+
+  var expresionCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!expresionCorreo.test(correo)) {
+    errorDiv.innerHTML = "El correo ingresado no es válido.";
+    return false;
+  }
+
+  if (signo === "") {
+    errorDiv.innerHTML = "Por favor, selecciona tu signo.";
+    return false;
+  }
+  var checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+  var checkboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+  
+  if (!checkboxChecked) {
+    errorDiv.innerHTML = "Por favor, selecciona al menos una opción de frecuencia.";
+    return false;
+  }
+  errorDiv.innerHTML = "¡Formulario enviado correctamente!";
+  errorDiv.style.color = "green";
+  return true;
+}
         function toggleMenu() {
             var menu = document.getElementById('nav-menu');
             menu.classList.toggle('active');
