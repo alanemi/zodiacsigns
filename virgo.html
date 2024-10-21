@@ -191,9 +191,9 @@
 <img src="https://www.zodiacsign.com/images/logo_n.png" alt="Logo Zodiaco">
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 <div class="menu" id="nav-menu">
-<a href="#">SIGNOS DEL ZODIACO</a>
-<a href="#">HORÓSCOPO</a>
-<a href=# onclick="compatibles()">COMPATIBILIDAD</a>
+<a href="index.html">SIGNOS DEL ZODIACO</a>
+<a href="#" onclick="horoscopo()">HORÓSCOPO</a>
+<a href="#" onclick="compatibles()">COMPATIBILIDAD</a>
 <a href="#">ASTROLOGÍA</a>
 <a href="#">TAROT</a>
 <a href="#">CALENDARIO DEL ZODIACO</a>
@@ -288,6 +288,170 @@ Buscar la bondad en la humanidad es la historia de Virgo, y la decepción parece
 <div class="more-info">
 <button>SABER MÁS</button>
 </div>
-</div>
+</div>}
+  <script>
+        function toggleMenu() {
+            var menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+        function compatibles() {
+        do {
+          var resp = prompt(
+            "Para saber quién es tu alma gemela, dinos: ¿Cuál es tu signo zodiacal?"
+          );
+          resp = resp.toLowerCase();
+          switch (resp) {
+            case "acuario":
+              alert(
+                "WOW! Eres Acuario, los signos con los que eres compatible son los signos de fuego"
+              );
+              break;
+            case "piscis":
+              alert(
+                "WOW! Eres Piscis, los signos con los que eres compatible son los signos de tierra"
+              );
+              break;
+            case "aries":
+              alert(
+                "WOW! Eres Aries, los signos con los que eres compatible son los signos de aire."
+              );
+              break;
+            case "tauro":
+              alert(
+                "WOW! Eres Tauro, los signos con los que eres compatible son los signos de agua"
+              );
+              break;
+            case "géminis":
+            case "geminis":
+              alert(
+                "WOW! Eres Géminis, los signos con los que eres compatible son los signos de fuego"
+              );
+              break;
+            case "cáncer":
+            case "cancer":
+              alert(
+                "WOW! Eres Cáncer, los signos con los que eres compatible son los signos de tierra"
+              );
+              break;
+            case "leo":
+              alert(
+                "WOW! Eres Leo, los signos con los que eres compatible son los signos de aire"
+              );
+              break;
+            case "virgo":
+              alert(
+                "WOW! Eres Virgo, los signos con los que eres compatible son los signos de agua"
+              );
+              break;
+            case "libra":
+              alert(
+                "WOW! Eres Libra, los signos con los que eres compatible son los signos de fuego"
+              );
+              break;
+            case "escorpio":
+              alert(
+                "WOW! Eres Escorpio, los signos con los que eres compatible son los signos de tierra"
+              );
+              break;
+            case "sagitario":
+              alert(
+                "WOW! Eres Sagitario, los signos con los que eres compatible son los signos de aire"
+              );
+              break;
+            case "capricornio":
+              alert(
+                "WOW! Eres Capricornio, los signos con los que eres compatible son los signos de agua"
+              );
+              break;
+            default:
+              alert(
+                "Lo sentimos, no podemos encontrar tu signo, verifica si estas escribiendo bien tu signo"
+              );
+              break;
+          }
+          var conf = window.confirm(
+            "¿Quieres conocer los compatibles de otro signo?"
+          );
+        } while (conf === true);
+      }
+
+function horoscopo(){
+do {
+    var resp = prompt(
+      "¡Lee tu predicción diaria según tu signo zodiacal y prepárate para aprovechar las oportunidades! ¿Cuál es tu signo zodiacal?",
+    )
+    resp = resp.toLowerCase()
+    switch (resp) {
+      case "acuario":
+        alert(
+          "Las innovaciones estarán en el aire. Permítete pensar fuera de la caja y considera nuevas formas de abordar viejos problemas.",
+        )
+        break
+      case "piscis":
+        alert(
+          "Tu creatividad florecerá. Aprovecha este día para involucrarte en actividades artísticas o de expresión personal que te inspiren.",
+        )
+        break
+      case "aries":
+        alert(
+          "Hoy sentirás una energía renovada que te impulsará a tomar decisiones audaces. Aprovecha este impulso para iniciar un nuevo proyecto.",
+        )
+        break
+      case "tauro":
+        alert(
+          "Es un buen día para centrarte en tus finanzas. Considera hacer un presupuesto o planificar una inversión a largo plazo."
+          )
+        break
+      case "géminis":
+      case "geminis":
+        alert(
+          "Las comunicaciones serán clave hoy. No dudes en expresar tus ideas, ya que podrías recibir apoyo inesperado de alguien cercano.",
+        )
+        break
+      case "cáncer":
+      case "cancer":
+        alert(
+          "Tu intuición estará especialmente aguda. Confía en tus instintos al tomar decisiones personales o laborales.",
+        )
+        break
+      case "leo":
+        alert(
+          "Hoy es un buen día para brillar. Participa en actividades que te permitan mostrar tus talentos y no temas ser el centro de atención.",
+        )
+        break
+        case "virgo":
+        alert(
+          "La organización será fundamental hoy. Dedica tiempo a ordenar tus espacios físicos y mentales, lo que te ayudará a sentirte más en control.",
+        )
+        break
+        case "libra":
+        alert(
+          "Las relaciones personales se fortalecerán. Busca pasar tiempo con amigos o seres queridos; una conversación significativa podría surgir.",
+        )
+        break
+        case "escorpio":
+        alert(
+          "Podrías enfrentar un desafío emocional hoy. Permítete sentir y procesar tus emociones para encontrar claridad y paz.",
+        )
+        break
+        case "sagitario":
+        alert(
+          "Un espíritu aventurero te impulsará a explorar nuevas ideas o lugares. Considera hacer un viaje corto o aprender algo nuevo.",
+        )
+        case "capricornio":
+        alert(
+          "La disciplina será tu mejor aliada hoy. Establece metas claras y trabaja con constancia para alcanzarlas.",
+        )
+        break
+      default:
+        alert(
+          "Lo sentimos, no podemos encontrar tu signo, verifica si estas escribiendo bien tu signo",
+        )
+        break
+    }
+    var conf = window.confirm("¿Quieres conocer el horóscopo de otro signo?")
+  } while (conf === true)
+}
+    </script>
 </body>
 </html>
