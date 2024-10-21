@@ -3,6 +3,278 @@
 <head>
 <meta charset="UTF-8">
 <title>Signo del zodiaco CAPRICORNIO</title>
+     <style>
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+       
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar img {
+            width: 150px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #e91e63;
+        }
+
+        .flags {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flags img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .hero {
+            padding: 100px 20px 50px; 
+            background: url() no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .signos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .signo {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .signo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .signo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .signo h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #e91e63;
+        }
+
+        .signo p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .button {
+            background-color: #e91e63;
+            color: #fff; 
+            padding: 12px 25px;
+            text-align: center; 
+            text-decoration: none; 
+            display: inline-block; 
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em; 
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #c2185b;
+            transform: scale(1.05);
+        }
+
+       
+        .info-section {
+            padding: 40px 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .info-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e91e63;
+            font-size: 2em;
+        }
+
+        .info-section p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 1em;
+            color: #555;
+            text-align: justify;
+        }
+
+        .red-underline {
+            color: red; 
+            text-decoration: underline; 
+        }
+
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: 80%;
+            }
+        }
+
+      
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-left: auto;
+            }
+        }
+
+    </style>
 </head>
 <body>
 <div class="navbar">
@@ -80,6 +352,7 @@ Capricornio rige las rodillas y la estructura esquelética, simbolizando su enfo
 <h3>Suscríbete a nuestro horóscopo</h3>
 <input type="email" placeholder="Correo electrónico">
 <input type="text" placeholder="Nombre completo">
+ <select id="sign">
 <select>
 <option value="">Tu signo</option>
 <option value="acuario">Acuario</option>
@@ -108,6 +381,30 @@ Capricornio rige las rodillas y la estructura esquelética, simbolizando su enfo
 </div>
 </div>
   <script>
+   document.getElementById('subscribeBtn').addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    const name = document.getElementById('name').value;
+    const sign = document.getElementById('sign').value;
+    const errorMessage = document.getElementById('errorMessage');
+
+    errorMessage.innerHTML = '';
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        errorMessage.innerHTML += 'Por favor, ingresa un correo electrónico válido.<br>';
+    }
+
+    if (name.trim() === '') {
+        errorMessage.innerHTML += 'Por favor, ingresa tu nombre completo.<br>';
+    }
+
+    if (sign === '') {
+        errorMessage.innerHTML += 'Por favor, selecciona tu signo del zodiaco.<br>';
+    }
+    if (errorMessage.innerHTML === '') {
+        alert('¡Te has suscrito exitosamente!');
+    }
+});
         function toggleMenu() {
             var menu = document.getElementById('nav-menu');
             menu.classList.toggle('active');
