@@ -260,8 +260,10 @@ Capricornio rige las rodillas y la estructura esquelética, simbolizando su enfo
 </div>
 <div class="subscribe">
 <h3>Suscríbete a nuestro horóscopo</h3>
-<input type="email" placeholder="Correo electrónico">
-<input type="text" placeholder="Nombre completo">
+<label for="nombre">Nombre</label><br>
+<input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre"><br>
+<label for="correo">Correo</label><br>
+<input type="email" id="correo" name="correo" placeholder="Introduce tu correo"><br>
 <select id="sign">
 <option value="">Tu signo</option>
 <option value="acuario">Acuario</option>
@@ -290,31 +292,33 @@ Capricornio rige las rodillas y la estructura esquelética, simbolizando su enfo
 </div>
 </div>
   <script>
-     function verificarCorreo(){
-    const email = document.getElementById('email').value;
-    const name = document.getElementById('name').value;
-    const sign = document.getElementById('sign').value;
-    const errorMessage = document.getElementById('errorMessage');
+  function validarFormulario() {
+  var nombre = document.getElementById("nombre").value;
+  var correo = document.getElementById("correo").value;
+  var contraseña = document.getElementById("contraseña").value;
+  var errorDiv = document.getElementById("error");
+  errorDiv.innerHTML = "";
+     
+  if (nombre === "") {
+    errorDiv.innerHTML = "El campo de nombre no puede estar vacío.";
+    return false;
+  }
 
-    errorMessage.innerHTML = '';
+  if (correo === "") {
+    errorDiv.innerHTML = "El campo de correo no puede estar vacío.";
+    return false;
+  }
+     
+  var expresionCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!expresionCorreo.test(correo)) {
+    errorDiv.innerHTML = "El correo ingresado no es válido.";
+    return false;
+  }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        errorMessage.innerHTML += 'Por favor, ingresa un correo electrónico válido.<br>';
-    }
-
-    if (name.trim() === '') {
-        errorMessage.innerHTML += 'Por favor, ingresa tu nombre completo.<br>';
-    }
-
-    if (sign === '') {
-        errorMessage.innerHTML += 'Por favor, selecciona tu signo del zodiaco.<br>';
-    }
-    if (errorMessage.innerHTML === '') {
-        alert('¡Te has suscrito exitosamente!');
-    }
-});
-     }
+  errorDiv.innerHTML = "¡Formulario enviado correctamente!";
+  errorDiv.style.color = "green";
+  return true;
+}
         function toggleMenu() {
             var menu = document.getElementById('nav-menu');
             menu.classList.toggle('active');
