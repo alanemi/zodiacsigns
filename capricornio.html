@@ -307,7 +307,6 @@ function validarFormulario() {
   var errorDiv = document.getElementById("error");
   errorDiv.innerHTML = "";
   
-  // Verificación de campos vacíos
   if (nombre === "") {
     errorDiv.innerHTML = "El campo de nombre no puede estar vacío.";
     return false;
@@ -318,20 +317,16 @@ function validarFormulario() {
     return false;
   }
 
-  // Validación de correo
   var expresionCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!expresionCorreo.test(correo)) {
     errorDiv.innerHTML = "El correo ingresado no es válido.";
     return false;
   }
 
-  // Verificación de signo seleccionado
   if (signo === "") {
     errorDiv.innerHTML = "Por favor, selecciona tu signo.";
     return false;
   }
-
-  // Comprobar al menos un checkbox seleccionado
   var checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
   var checkboxChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
   
@@ -339,8 +334,6 @@ function validarFormulario() {
     errorDiv.innerHTML = "Por favor, selecciona al menos una opción de frecuencia.";
     return false;
   }
-
-  // Si todo está correcto
   errorDiv.innerHTML = "¡Formulario enviado correctamente!";
   errorDiv.style.color = "green";
   return true;
