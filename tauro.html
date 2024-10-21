@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Signo del zodiaco Acuario</title>
+<style>
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .info {
+            text-align: left;
+            width: 60%;
+        }
+        .info h2 {
+            color: #111;
+        }
+        .info a {
+            color: red;
+            text-decoration: none;
+        }
+        .info p {
+            color: #666;
+        }
+        .image {
+            width: 30%;
+        }
+        .image img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .subscribe {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .subscribe input, select {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .subscribe button {
+            padding: 10px 20px;
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .subscribe button:hover {
+            background-color: #350054;
+        }
+        .subscribe p {
+            font-size: 12px;
+        }
+        .more-info {
+            margin-top: 20px;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+        }
+        .more-info button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .more-info button:hover {
+            background-color: #777;
+        }
+        .checkbox-group {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            gap: 50px; 
+            margin-top: 20px;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .info-box {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .info-box h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .info-box p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .info-box strong {
+            color: #111;
+        }
+        
+         .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar img {
+            width: 150px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #e91e63;
+        }
+
+        .flags {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flags img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+</style>
+</head>
+<body>
+<div class="navbar">
+<img src="https://www.zodiacsign.com/images/logo_n.png" alt="Logo Zodiaco">
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu" id="nav-menu">
+<a href="#">SIGNOS DEL ZODIACO</a>
+<a href="#">HORÓSCOPO</a>
+<a href=# onclick="compatibles()">COMPATIBILIDAD</a>
+<a href="#">ASTROLOGÍA</a>
+<a href="#">TAROT</a>
+<a href="#">CALENDARIO DEL ZODIACO</a>
+<a href="#">ARTÍCULOS</a>
+</div>
+<div class="flags">
+<span class="search-icon">🔍</span>
+<img src="https://i.pinimg.com/564x/4c/a5/e1/4ca5e18c26eecb9899187b0093a8c0cc.jpg">
+<img src="https://i.pinimg.com/564x/89/5e/e1/895ee19a8089bced037a3c91c864dbe9.jpg">
+<img src="https://i.pinimg.com/564x/53/88/1e/53881ec4ac45ffe5218359586d37620e.jpg">
+<img src="https://i.pinimg.com/564x/16/0d/91/160d91ae08e8ad7b5b471aa4fd1f1135.jpg">
+<img src="https://i.pinimg.com/564x/b2/21/1c/b2211cb95891ef5d1933fe414503773d.jpg">
+<img src="https://i.pinimg.com/564x/77/b0/9f/77b09fad4e80298877439a78288c0d7a.jpg">
+</div>
+</div>
+<div class="container">
+<div class="header">
+<h1>El signo del zodiaco <span style="color: #4b0082;">Tauro</span>: Horóscopo completo de Tauro</h1>
+<p>1 de octubre de 2024</p>
+</div>
+ <div class="content">
+ <div class="info">
+ <h2>Elemento: <a href="#">Tierra</a></h2>
+ <p>Color: <a href="#">Azul,rosa,verde</a></p>
+ <p>Cualidad: <a href="#">fija</a></p>
+ <p>Día: <a href="#">Viernes, Lunes</a></p>
+<p>Regente: <a href="#">Venus</a></p>
+ <p>Mayor compatibilidad: <a href="#">Virgo</a>, <a href="#">Capricornio</a></p>
+ <p>Números de la suerte: <a href="#"> 2, 4, 6, 11, 20, 29, 37, 47, 56</a></p>
+ <p>Fechas: <a href="#">Abril 20 - Mayo 20</a></p>
+ </div>
+ <div class="image">
+ <img src="https://www.zodiacsign.com/images/taurus.jpg">
+ </div>
+ </div>
+ <div class="info-box">
+ <h3>Rasgos de personalidad</h3>
+ <p><strong>Fortalezas:</strong> Confiable, paciente, práctico, devoto, responsable, estable</p>
+ <p><strong>Debilidades:</strong>Testarudo, posesivo, intransigente</p>
+ <p><strong>A Tauro le gusta:</strong>  La jardinería, cocinar, la música, el romance, ropa de alta calidad, trabajos manuales</p>
+ <p><strong>A Tauro no le gustan:</strong> Cambios repentinos, complicaciones, inseguridades de cualquier tipo, textiles sintéticos.</p>
+ </div>
+ <br>
+<div>
+<p>
+Poderoso y confiable. Tauro es el primero cuando se trata de cosechar los frutos de su labor. Aman todo lo que sea bueno y hermoso y suelen rodearse de placeres materiales. Las personas nacidas bajo el signo de Tauro son muy sensuales y tienen un tacto mu agudo. El tacto es extremadamente importante para ellos, tanto en negocios como en el romance. Estables y conservadores, Tauro es uno de los signos más confiables del zodiaco. Su testarudez es un rasgo que le obliga a expulsar las cosas hasta el final, con el fin de cumplir con las normas.</p>
+</div>
+<br>
+<div>
+<p>
+Como signo de tierra, Tauro puede se sobreprotector con sus seres queridos. Son muy buenos para hacer dinero y no dejarán sus proyectos hasta verlos terminados.
+</p>
+</div>
+<img src="https://www.zodiacsign.com/images/aries_story-min.jpg">
+<div>
+<p>
+Los toros suelen ser conocidos por su terquedad, pero eso también puede ser visto como su total compromiso en la ejecución de sus proyectos.
+<br>
+</p>
+<p>
+<a >Es por ello que Tauro puede ser un excelente cocinero, artista y animador. Es leal y no le gustan los cambios repentinos e indeseados. Tauro es el signo más dependiente del zodiaco. A pesar de que algunos puedan tener ideas muy conservadoras del mundo o ser demasiado aficionados al dinero y la riqueza, tienen la habilidad de tener una voz de razón práctica en cualquier situación caótica o poco saludable.</p>
+</div>
+<div class="subscribe">
+<h3>Suscríbete a nuestro horóscopo</h3>
+<input type="email" placeholder="Correo electrónico">
+<input type="text" placeholder="Nombre completo">
+<select>
+<option value="">Tu signo</option>
+<option value="acuario">Acuario</option>
+<option value="piscis">Piscis</option>
+<option value="aries">Aries</option>
+<option value="tauro">Tauro</option>
+<option value="geminis">Géminis</option>
+<option value="cancer">Cáncer</option>
+<option value="leo">Leo</option>
+<option value="virgo">Virgo</option>
+<option value="libra">Escorpión</option>
+<option value="sagitario">Sagitario</option>
+<option value="capricornio">Capricornio</option>
+</select>
+<br>
+<div class="checkbox-group">
+<label><input type="checkbox" checked> Diario</label>
+<label><input type="checkbox"> Semanalmente</label>
+</div>
+<br>
+<button>Suscribir</button>
+<p>Al hacer clic en "Suscribirse", acepta nuestras <a href="#">Política de privacidad y términos</a></p>
+</div>
+<div class="more-info">
+<button>SABER MÁS</button>
+</div>
+</div>
+</body>
+</html>

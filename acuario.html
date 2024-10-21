@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Signo del zodiaco Acuario</title>
+<style>
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .info {
+            text-align: left;
+            width: 60%;
+        }
+        .info h2 {
+            color: #111;
+        }
+        .info a {
+            color: red;
+            text-decoration: none;
+        }
+        .info p {
+            color: #666;
+        }
+        .image {
+            width: 30%;
+        }
+        .image img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .subscribe {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .subscribe input, select {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .subscribe button {
+            padding: 10px 20px;
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .subscribe button:hover {
+            background-color: #350054;
+        }
+        .subscribe p {
+            font-size: 12px;
+        }
+        .more-info {
+            margin-top: 20px;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+        }
+        .more-info button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .more-info button:hover {
+            background-color: #777;
+        }
+        .checkbox-group {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            gap: 50px; 
+            margin-top: 20px;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .info-box {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .info-box h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .info-box p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .info-box strong {
+            color: #111;
+        }
+        
+         .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar img {
+            width: 150px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #e91e63;
+        }
+
+        .flags {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flags img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+</style>
+</head>
+<body>
+<div class="navbar">
+<img src="https://www.zodiacsign.com/images/logo_n.png" alt="Logo Zodiaco">
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu" id="nav-menu">
+<a href="#">SIGNOS DEL ZODIACO</a>
+<a href="#">HORÓSCOPO</a>
+<a href=# onclick="compatibles()">COMPATIBILIDAD</a>
+<a href="#">ASTROLOGÍA</a>
+<a href="#">TAROT</a>
+<a href="#">CALENDARIO DEL ZODIACO</a>
+<a href="#">ARTÍCULOS</a>
+</div>
+<div class="flags">
+<span class="search-icon">🔍</span>
+<img src="https://i.pinimg.com/564x/4c/a5/e1/4ca5e18c26eecb9899187b0093a8c0cc.jpg">
+<img src="https://i.pinimg.com/564x/89/5e/e1/895ee19a8089bced037a3c91c864dbe9.jpg">
+<img src="https://i.pinimg.com/564x/53/88/1e/53881ec4ac45ffe5218359586d37620e.jpg">
+<img src="https://i.pinimg.com/564x/16/0d/91/160d91ae08e8ad7b5b471aa4fd1f1135.jpg">
+<img src="https://i.pinimg.com/564x/b2/21/1c/b2211cb95891ef5d1933fe414503773d.jpg">
+<img src="https://i.pinimg.com/564x/77/b0/9f/77b09fad4e80298877439a78288c0d7a.jpg">
+</div>
+</div>
+<div class="container">
+<div class="header">
+<h1>El signo del zodiaco <span style="color: #4b0082;">Acuario</span>: Horóscopo completo de Acuario</h1>
+<p>1 de octubre de 2024</p>
+</div>
+ <div class="content">
+ <div class="info">
+ <h2>Elemento: <a href="#">Aire</a></h2>
+ <p>Color: <a href="#">Azul claro, Plata</a></p>
+ <p>Calidad: <a href="#">Fija</a></p>
+ <p>Día: <a href="#">Sábado</a></p>
+<p>Regente: <a href="#">Urano</a>, <a href="#">Saturno</a></p>
+ <p>Mayor compatibilidad: <a href="#">Leo</a>, <a href="#">Sagitario</a></p>
+ <p>Números de la suerte: <a href="#">4, 7, 11, 22, 29</a></p>
+ <p>Fechas: <a href="#">20 de enero - 18 de febrero</a></p>
+ </div>
+ <div class="image">
+ <img src="https://www.zodiacsign.com/images/aquarius.jpg">
+ </div>
+ </div>
+ <div class="info-box">
+ <h3>Rasgos de personalidad</h3>
+ <p><strong>Fortalezas:</strong> Progresista, original, independiente, humanitario.</p>
+ <p><strong>Debilidades:</strong> Huye de la expresión emocional, temperamental, intransigente, distante.</p>
+ <p><strong>A Acuario le gusta:</strong> Divertirse con amigos, negocios arriesgados, luchar por causas, conversaciones intelectuales.</p>
+ <p><strong>A Acuario no le gustan:</strong> Las limitaciones, las promesas incumplidas, la soledad, las situaciones aburridas o monótonas.</p>
+ </div>
+ <br>
+<div>
+<p>
+Acuario es un signo diferente al resto del zodiaco y las personas nacidas con el Sol en él se sienten especiales. Esto les hace excéntricos y enérgicos en su lucha por la libertad, o a veces tímidos y callados, temerosos de expresar su verdadera personalidad. En ambos casos son pensadores profundos y personas altamente intelectuales a las que les encanta luchar por causas idealistas. Son capaces de ver a las personas sin prejuicios y esto les hace verdaderamente especiales. Aunque pueden adaptarse fácilmente a la energía que les rodea, los representantes de Acuario tienen una profunda necesidad de tener un tiempo a solas y lejos de todo para recuperar fuerzas.
+</p>
+</div>
+<br>
+<div>
+<p>
+El signo de Acuario pertenece al <a href="#">elemento Aire</a>, completando la historia de <a href="#">Géminis y Libra</a> y conectándolos de alguna manera a través de la oposición de la libertad y las relaciones. Dependerán de su mente y de las palabras habladas la mayor parte del tiempo, y sin estimulación mental podrían perder el interés incluso en las cosas que hicieron que su corazón saltara al principio. Ven el mundo como un lugar lleno de posibilidades y tienen la necesidad de ser espontáneos, seguir el momento y vivirlo al máximo en un intento de no perder el tiempo.
+</p>
+</div>
+<img src="https://www.zodiacsign.com/images/aquarius_story-min.jpg">
+<div>
+<p>
+<a href="#">Urano</a> es el regente de Acuario, hombro con hombro con su regente tradicional, Saturno. Aunque Urano tiene una naturaleza abrupta, tímida y a veces agresiva, su otro regente a menudo lo mantiene lo suficientemente firme y lo ayuda a encontrar suficiente distancia de otras personas para permanecer algo indiferente. Un visionario y alguien listo para los cambios, un Acuario es un pensador conocido y alguien que sacudirá tu mundo una vez que esté en él. Se sienten mejor como parte de cierta comunidad, pero pueden tener problemas para encontrar el lugar correcto al que sienten que pertenecen.
+<br>
+</p>
+<p>
+<a href="#">Acuario – El protegido bello</a> Aunque Ganimedes puede parecer delgado y débil, esto no hace que el carácter de estos individuos sea menos poderoso de lo que obviamente es. Siempre tienen a alguien que los levanta, alguien que les muestra el camino hacia los cielos y la iluminación que buscan. Pertenecen a quienes están a cargo, sus problemas con la autoridad generalmente surgen de su relación con otras personas, y no de la estructura dirigente en sí. Para encontrar el centro, tienen que estar dispuestos a cavar profundo.
+</p>
+</div>
+<div class="subscribe">
+<h3>Suscríbete a nuestro horóscopo</h3>
+<input type="email" placeholder="Correo electrónico">
+<input type="text" placeholder="Nombre completo">
+<select>
+<option value="">Tu signo</option>
+<option value="acuario">Acuario</option>
+<option value="piscis">Piscis</option>
+<option value="aries">Aries</option>
+<option value="tauro">Tauro</option>
+<option value="geminis">Géminis</option>
+<option value="cancer">Cáncer</option>
+<option value="leo">Leo</option>
+<option value="virgo">Virgo</option>
+<option value="libra">Escorpión</option>
+<option value="sagitario">Sagitario</option>
+<option value="capricornio">Capricornio</option>
+</select>
+<br>
+<div class="checkbox-group">
+<label><input type="checkbox" checked> Diario</label>
+<label><input type="checkbox"> Semanalmente</label>
+</div>
+<br>
+<button>Suscribir</button>
+<p>Al hacer clic en "Suscribirse", acepta nuestras <a href="#">Política de privacidad y términos</a></p>
+</div>
+<div class="more-info">
+<button>SABER MÁS</button>
+</div>
+</div>
+</body>
+</html>

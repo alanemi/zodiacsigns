@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Signo del zodiaco VIRGO</title>
+<style>
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .info {
+            text-align: left;
+            width: 60%;
+        }
+        .info h2 {
+            color: #111;
+        }
+        .info a {
+            color: red;
+            text-decoration: none;
+        }
+        .info p {
+            color: #666;
+        }
+        .image {
+            width: 30%;
+        }
+        .image img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .subscribe {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .subscribe input, select {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .subscribe button {
+            padding: 10px 20px;
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .subscribe button:hover {
+            background-color: #350054;
+        }
+        .subscribe p {
+            font-size: 12px;
+        }
+        .more-info {
+            margin-top: 20px;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+        }
+        .more-info button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .more-info button:hover {
+            background-color: #777;
+        }
+        .checkbox-group {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            gap: 50px; 
+            margin-top: 20px;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .info-box {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .info-box h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .info-box p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .info-box strong {
+            color: #111;
+        }
+        
+         .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar img {
+            width: 150px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #e91e63;
+        }
+
+        .flags {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flags img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+</style>
+</head>
+<body>
+<div class="navbar">
+<img src="https://www.zodiacsign.com/images/logo_n.png" alt="Logo Zodiaco">
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu" id="nav-menu">
+<a href="#">SIGNOS DEL ZODIACO</a>
+<a href="#">HORÓSCOPO</a>
+<a href=# onclick="compatibles()">COMPATIBILIDAD</a>
+<a href="#">ASTROLOGÍA</a>
+<a href="#">TAROT</a>
+<a href="#">CALENDARIO DEL ZODIACO</a>
+<a href="#">ARTÍCULOS</a>
+</div>
+<div class="flags">
+<span class="search-icon">🔍</span>
+<img src="https://i.pinimg.com/564x/4c/a5/e1/4ca5e18c26eecb9899187b0093a8c0cc.jpg">
+<img src="https://i.pinimg.com/564x/89/5e/e1/895ee19a8089bced037a3c91c864dbe9.jpg">
+<img src="https://i.pinimg.com/564x/53/88/1e/53881ec4ac45ffe5218359586d37620e.jpg">
+<img src="https://i.pinimg.com/564x/16/0d/91/160d91ae08e8ad7b5b471aa4fd1f1135.jpg">
+<img src="https://i.pinimg.com/564x/b2/21/1c/b2211cb95891ef5d1933fe414503773d.jpg">
+<img src="https://i.pinimg.com/564x/77/b0/9f/77b09fad4e80298877439a78288c0d7a.jpg">
+</div>
+</div>
+<div class="container">
+<div class="header">
+<h1>El signo del zodiaco <span style="color: #4b0082;">Virgo</span>: Horóscopo completo de Virgo</h1>
+<p>1 de octubre de 2024</p>
+</div>
+ <div class="content">
+ <div class="info">
+ <h2>Elemento: <a href="#">Tierra</a></h2>
+ <p>Color: <a href="#">Verde</a></p>
+ <p>Calidad: <a href="#">Mutable</a></p>
+ <p>Día: <a href="#">Martes</a></p>
+<p>Regente: <a href="#">Mercurio</a></p>
+ <p>Mayor compatibilidad: <a href="#">Tauro</a>, <a href="#">Capricornio</a></p>
+ <p>Números de la suerte: <a href="#">5, 14, 23, 32</a></p>
+ <p>Fechas: <a href="#">23 de agosto - 22 de septiembre</a></p>
+ </div>
+ <div class="image">
+ <img src="https://www.zodiacsign.com/images/aries.jpg">
+ </div>
+ </div>
+ <div class="info-box">
+ <h3>Rasgos de personalidad</h3>
+ <p><strong>Fortalezas:</strong> Practicidad, Atencion al detalle, Organización, Lealtad, Analiticos.</p>
+ <p><strong>Debilidades:</strong> Criticos, Perfeccionistas, Inseguridad, Reservados, Sobreanalizan.</p>
+ <p><strong>A Virgo le gusta:</strong> Orden y limpieza, Aprender, Ayudar a los demas, Rutinas, Naturaleza.</p>
+ <p><strong>A Virgo no le gustan:</strong> Desorganizacion, Imprecision, Falta de etica, Conflictos, Descuido.</p>
+ </div>
+ <br>
+<div>
+<p>
+Como sexto signo del zodiaco, Los Virgos siempre prestan atención a los más mínimos detalles y su profundo sentido de humanidad los convierte en uno de los signos más cuidadosos del zodiaco. Su enfoque metódico hacia la vida asegura que nada se deje al azar, y aunque a menudo son tiernos, su corazón puede estar cerrado al mundo exterior. Este es un signo a menudo malinterpretado, no porque carezcan de la capacidad de expresarse, sino porque no aceptan sus sentimientos como válidos, verdaderos o incluso relevantes cuando se enfrentan a la razón. El simbolismo detrás del nombre habla bien de su naturaleza, nacidos con la sensación de que están experimentando todo por primera vez.<a href="#">Tierra</a> (al igual que <a href="#">Tauro y Capricornio</a> )</p>
+</div>
+<br>
+<div>
+<p>
+Virgo es un signo de Tierra, encajando perfectamente entre Tauro y Capricornio. Esto conduce a un carácter fuerte, pero que prefiere las cosas conservadoras, bien organizadas y mucha practicidad en su vida diaria. Estos individuos tienen una vida organizada, y aunque a veces se entreguen al caos, sus metas y sueños aún tienen límites estrictamente definidos en su mente. Constantemente preocupados de que han pasado por alto un detalle que será imposible de corregir, pueden quedarse atrapados en los detalles, volviéndose excesivamente críticos y preocupados por asuntos que a nadie más parece importarle.
+</p>
+</div>
+<img src="https://www.zodiacsign.com/images/aries_story-min.jpg">
+<div>
+<p>
+Dado que Mercurio es el planeta regente de este signo, sus representantes tienen un sentido del habla y la escritura muy desarrollado, así como todas las demás formas de comunicación. Muchos Virgos pueden optar por seguir una carrera como escritores, periodistas y mecanógrafos, pero su necesidad de servir a los demás les hace sentirse bien como cuidadores, con una misión clara de ayudar.
+<br>
+</p>
+<p>
+<a href="#">Virgo – la Diosa Decepcionada
+
+Buscar la bondad en la humanidad es la historia de Virgo, y la decepción parece ser inevitable desde su punto de vista. La primera vez que descendieron de su nube y saltaron al planeta Tierra, sintieron que su misión era usar su existencia para el bien, descubriendo formas de justicia y pureza en otras personas. Una vez que fallan en encontrarlo demasiadas veces, los Virgos se alejarán, se perderán, recurrirán al abuso de sustancias o simplemente se separarán de los demás para sentarse en la banca, criticar y juzgar..</p>
+</div>
+<div class="subscribe">
+<h3>Suscríbete a nuestro horóscopo</h3>
+<input type="email" placeholder="Correo electrónico">
+<input type="text" placeholder="Nombre completo">
+<select>
+<option value="">Tu signo</option>
+<option value="acuario">Acuario</option>
+<option value="piscis">Piscis</option>
+<option value="aries">Aries</option>
+<option value="tauro">Tauro</option>
+<option value="geminis">Géminis</option>
+<option value="cancer">Cáncer</option>
+<option value="leo">Leo</option>
+<option value="virgo">Virgo</option>
+<option value="libra">Escorpión</option>
+<option value="sagitario">Sagitario</option>
+<option value="capricornio">Capricornio</option>
+</select>
+<br>
+<div class="checkbox-group">
+<label><input type="checkbox" checked> Diario</label>
+<label><input type="checkbox"> Semanalmente</label>
+</div>
+<br>
+<button>Suscribir</button>
+<p>Al hacer clic en "Suscribirse", acepta nuestras <a href="#">Política de privacidad y términos</a></p>
+</div>
+<div class="more-info">
+<button>SABER MÁS</button>
+</div>
+</div>
+</body>
+</html>

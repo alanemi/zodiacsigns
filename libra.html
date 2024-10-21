@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Signo del zodiaco LIBRA</title>
+<style>
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .info {
+            text-align: left;
+            width: 60%;
+        }
+        .info h2 {
+            color: #111;
+        }
+        .info a {
+            color: red;
+            text-decoration: none;
+        }
+        .info p {
+            color: #666;
+        }
+        .image {
+            width: 30%;
+        }
+        .image img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .subscribe {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .subscribe input, select {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .subscribe button {
+            padding: 10px 20px;
+            background-color: #4b0082;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .subscribe button:hover {
+            background-color: #350054;
+        }
+        .subscribe p {
+            font-size: 12px;
+        }
+        .more-info {
+            margin-top: 20px;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+        }
+        .more-info button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .more-info button:hover {
+            background-color: #777;
+        }
+        .checkbox-group {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            gap: 50px; 
+            margin-top: 20px;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .info-box {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .info-box h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .info-box p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .info-box strong {
+            color: #111;
+        }
+        
+         .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar img {
+            width: 150px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #e91e63;
+        }
+
+        .flags {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flags img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+</style>
+</head>
+<body>
+<div class="navbar">
+<img src="https://www.zodiacsign.com/images/logo_n.png" alt="Logo Zodiaco">
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu" id="nav-menu">
+<a href="#">SIGNOS DEL ZODIACO</a>
+<a href="#">HORÓSCOPO</a>
+<a href=# onclick="compatibles()">COMPATIBILIDAD</a>
+<a href="#">ASTROLOGÍA</a>
+<a href="#">TAROT</a>
+<a href="#">CALENDARIO DEL ZODIACO</a>
+<a href="#">ARTÍCULOS</a>
+</div>
+<div class="flags">
+<span class="search-icon">🔍</span>
+<img src="https://i.pinimg.com/564x/4c/a5/e1/4ca5e18c26eecb9899187b0093a8c0cc.jpg">
+<img src="https://i.pinimg.com/564x/89/5e/e1/895ee19a8089bced037a3c91c864dbe9.jpg">
+<img src="https://i.pinimg.com/564x/53/88/1e/53881ec4ac45ffe5218359586d37620e.jpg">
+<img src="https://i.pinimg.com/564x/16/0d/91/160d91ae08e8ad7b5b471aa4fd1f1135.jpg">
+<img src="https://i.pinimg.com/564x/b2/21/1c/b2211cb95891ef5d1933fe414503773d.jpg">
+<img src="https://i.pinimg.com/564x/77/b0/9f/77b09fad4e80298877439a78288c0d7a.jpg">
+</div>
+</div>
+<div class="container">
+<div class="header">
+<h1>El signo del zodiaco <span style="color: #4b0082;">Libra</span>: Horóscopo completo de Libra</h1>
+<p>1 de octubre de 2024</p>
+</div>
+ <div class="content">
+ <div class="info">
+ <h2>Elemento: <a href="#">Aire</a></h2>
+ <p>Color: <a href="#">Rosa y Azul</a></p>
+ <p>Calidad: <a href="#">Cardinal</a></p>
+ <p>Día: <a href="#">Martes</a></p>
+<p>Regente: <a href="#">Venus</a></p>
+ <p>Mayor compatibilidad: <a href="#">Geminis</a>, <a href="#">Acuario</a></p>
+ <p>Números de la suerte: <a href="#">6, 15, 24, 33</a></p>
+ <p>Fechas: <a href="#">23 de septiembre - 22 de octubre</a></p>
+ </div>
+ <div class="image">
+ <img src="https://www.zodiacsign.com/images/aries.jpg">
+ </div>
+ </div>
+ <div class="info-box">
+ <h3>Rasgos de personalidad</h3>
+ <p><strong>Fortalezas:</strong> Dimplomaticos, Justos, Encantadores, Creativos, Colaborativos.</p>
+ <p><strong>Debilidades:</strong> Indecision, Evitan conflictos, Dependencia, Superficialidad, Dificultad para ser solitarios.</p>
+ <p><strong>A Libra le gusta:</strong> Armonia, Socializar, Arte y estetica, Justicia, Nuevas experiencias.</p>
+ <p><strong>A Libra no le gustan:</strong> Desarmonia, Desigualdad, Soledad, Falta de estetica, Rigidez.</p>
+ </div>
+ <br>
+<div>
+<p>
+Como septimo signo del zodiaco, Las personas nacidas bajo el signo de Libra son pacíficas, justas y odian estar solas. La asociación es muy importante para ellos, buscando a alguien que pueda ser su espejo. Estos individuos están fascinados por el equilibrio y la simetría, y están en una búsqueda constante de justicia e igualdad, dándose cuenta a lo largo de la vida de que lo único que realmente debería ser importante para ellos es su propio núcleo interno de personalidad. Esta es una persona dispuesta a hacer casi cualquier cosa para evitar el conflicto, manteniendo la paz siempre que sea posible.<a href="#">Aire</a> (al igual que <a href="#">Geminis y Acuario</a> )</p>
+</div>
+<br>
+<div>
+<p>
+El signo de Libra es un signo de Aire, situado entre Géminis y Acuario, lo que proporciona a estas personas un estímulo mental constante, un fuerte intelecto y una mente aguda. Se sentirán inspirados por buenos libros, discusiones profundas y personas que tienen mucho que decir. Cada representante de Libra debe tener cuidado al hablar con los demás, ya que, cuando se ven obligados a decidir sobre algo que se les presenta o a tomar partido, de repente se dan cuenta de que podrían estar en el lugar equivocado y rodeados de personas incorrectas. Ningún compañero debería hacerles olvidar que tienen su propia opinión.
+</p>
+</div>
+<img src="https://www.zodiacsign.com/images/aries_story-min.jpg">
+<div>
+<p>
+El planeta regente del signo de Libra es Venus, lo que convierte a estas personas en grandes amantes, pero también en aficionados a las cosas materiales y costosas. Sus vidas necesitan enriquecerse con música, arte y lugares hermosos que tengan la oportunidad de visitar.
+<br>
+</p>
+<p>
+<a href="#">Libra – La Medida de Nuestras Almas
+
+El mito más breve de todos parece presentar una buena analogía para la constelación más corta en el cielo, que incluso podría decirse que es casi inexistente, presentada por las garras de Escorpio. Libra es un punto de equilibrio en un mar de diferentes extremos, manifestado solo a través del quincuagésimo grado de este magnífico signo, un objeto entre animales y personas. Hay algo terriblemente inseguro en Libra, como si no supieran qué plato cargar a continuación, conscientes de que las cosas pasan y nos enseñan a ser cautelosos con los demás. Lo que sea que hagamos en nuestras vidas, solo sirve para señalar el camino hacia ese “poder superior” que finalmente medirá nuestra existencia. Indicándonos dónde nos equivocamos o qué hicimos bien, los Libra nos enseñan inconscientemente que la verdadera liberación se esconde en la ligereza.</p>
+</div>
+<div class="subscribe">
+<h3>Suscríbete a nuestro horóscopo</h3>
+<input type="email" placeholder="Correo electrónico">
+<input type="text" placeholder="Nombre completo">
+<select>
+<option value="">Tu signo</option>
+<option value="acuario">Acuario</option>
+<option value="piscis">Piscis</option>
+<option value="aries">Aries</option>
+<option value="tauro">Tauro</option>
+<option value="geminis">Géminis</option>
+<option value="cancer">Cáncer</option>
+<option value="leo">Leo</option>
+<option value="virgo">Virgo</option>
+<option value="libra">Escorpión</option>
+<option value="sagitario">Sagitario</option>
+<option value="capricornio">Capricornio</option>
+</select>
+<br>
+<div class="checkbox-group">
+<label><input type="checkbox" checked> Diario</label>
+<label><input type="checkbox"> Semanalmente</label>
+</div>
+<br>
+<button>Suscribir</button>
+<p>Al hacer clic en "Suscribirse", acepta nuestras <a href="#">Política de privacidad y términos</a></p>
+</div>
+<div class="more-info">
+<button>SABER MÁS</button>
+</div>
+</div>
+</body>
+</html>
