@@ -262,8 +262,7 @@ Capricornio rige las rodillas y la estructura esquelética, simbolizando su enfo
 <h3>Suscríbete a nuestro horóscopo</h3>
 <input type="email" placeholder="Correo electrónico">
 <input type="text" placeholder="Nombre completo">
- <select id="sign">
-<select>
+<select id="sign">
 <option value="">Tu signo</option>
 <option value="acuario">Acuario</option>
 <option value="piscis">Piscis</option>
@@ -283,7 +282,7 @@ Capricornio rige las rodillas y la estructura esquelética, simbolizando su enfo
 <label><input type="checkbox"> Semanalmente</label>
 </div>
 <br>
-<button>Suscribir</button>
+<button onclick="verificarCorreo()">Suscribir</button>
 <p>Al hacer clic en "Suscribirse", acepta nuestras <a href="#">Política de privacidad y términos</a></p>
 </div>
 <div class="more-info">
@@ -291,7 +290,7 @@ Capricornio rige las rodillas y la estructura esquelética, simbolizando su enfo
 </div>
 </div>
   <script>
-   document.getElementById('subscribeBtn').addEventListener('click', function() {
+     function verificarCorreo(){
     const email = document.getElementById('email').value;
     const name = document.getElementById('name').value;
     const sign = document.getElementById('sign').value;
@@ -315,6 +314,7 @@ Capricornio rige las rodillas y la estructura esquelética, simbolizando su enfo
         alert('¡Te has suscrito exitosamente!');
     }
 });
+     }
         function toggleMenu() {
             var menu = document.getElementById('nav-menu');
             menu.classList.toggle('active');
